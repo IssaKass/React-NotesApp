@@ -50,4 +50,4 @@ To run the React Notes App locally, follow these steps:
 
 ## Live Preview
 
-You can check out the live preview of the React Notes App <a herf="https://issakass.github.io/react-notes-app/">here</a>.
+You can check out the live preview of the React Notes App <a href = "https://issakass.github.io/react-notes-app/">here</a>.
