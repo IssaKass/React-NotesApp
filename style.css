@@ -1,0 +1,13 @@
+.gutter {
+  @apply bg-neutral-300 dark:bg-neutral-600 hover:bg-teal-600 active:bg-teal-600
+  dark:hover:bg-teal-600 dark:active:bg-teal-600
+  max-w-[3px] hover:max-w-[5px] active:max-w-[5px];
+}
+
+.gutter.gutter-horizontal:hover {
+  cursor: col-resize;
+}
+
+.split {
+  display: flex;
+}

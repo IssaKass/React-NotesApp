@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Rubik", sans-serif;
+  }
+  input[type="text"],
+  input[type="search"] {
+    @apply border border-neutral-200 dark:border-neutral-700
+    focus:outline-none focus:border-transparent focus:ring-2 focus:ring-teal-700 dark:focus:ring-teal-700
+    rounded-md px-2 py-1 text-sm 
+    bg-transparent
+    text-neutral-600 dark:text-white
+    placeholder:text-neutral-400 dark:placeholder:text-neutral-600;
+  }
+}
+
+@layer components {
+  /* App */
+  .app {
+    @apply h-screen overflow-hidden;
+  }
+  /* Toolbar */
+  .toolbar {
+    @apply bg-neutral-100 dark:bg-neutral-900 
+    border-b border-neutral-300 dark:border-neutral-600
+    py-4 px-8 flex gap-4;
+  }
+  .toolbar-button {
+    @apply disabled:bg-transparent disabled:hover:bg-transparent disabled:dark:hover:bg-transparent 
+    disabled:cursor-auto disabled:opacity-50
+    bg-transparent hover:bg-neutral-200 dark:hover:bg-neutral-700 
+    text-neutral-600 dark:text-neutral-300 text-base
+    border border-neutral-200 dark:border-neutral-700 
+    p-2 rounded-md;
+  }
+  .toolbar-button.active {
+    @apply bg-teal-700 text-white border-teal-700 hover:bg-teal-700;
+  }
+  .toolbar form {
+    @apply ms-auto;
+  }
+  .toolbar form > * {
+    @apply h-full;
+  }
+  /* Sidebar */
+  .sidebar {
+    @apply h-screen overflow-y-auto
+     bg-neutral-100 dark:bg-neutral-900 
+     pt-4 pb-20 px-4 relative;
+  }
+  .pinned-notes {
+    @apply mb-4 pb-2 border-b border-neutral-300 dark:border-neutral-600;
+  }
+  .pinned-notes-title {
+    @apply flex items-center gap-1 text-sm pb-2 text-neutral-500;
+  }
+  .note-tab {
+    @apply bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200
+    px-3 py-2 mb-2 rounded-md
+    select-none cursor-pointer;
+  }
+  .note-tab[data-selected="true"] {
+    @apply bg-teal-700 text-white;
+  }
+  .note-tab .note-tab-title {
+    @apply text-sm font-medium whitespace-nowrap overflow-hidden text-ellipsis;
+  }
+  .note-tab .note-tab-title.untitled {
+    @apply opacity-40;
+  }
+  .editing-date {
+    @apply block mt-1 text-xs opacity-40;
+  }
+  .note-tab[data-selected="true"] .editing-date {
+    @apply opacity-90;
+  }
+  .no-notes {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+    text-xl text-neutral-400 dark:text-neutral-600;
+  }
+  /* Editor */
+  .editor {
+    @apply h-screen overflow-hidden flex-1 bg-white dark:bg-neutral-800;
+  }
+  .creation-date {
+    @apply text-center text-xs p-3 text-neutral-400 dark:text-neutral-500 select-none;
+  }
+  .editor-area {
+    @apply bg-transparent w-full h-screen
+  text-neutral-800 dark:text-white 
+  caret-neutral-800 dark:caret-neutral-400
+    border-none outline-none resize-none
+    p-4;
+  }
+  /* Theme Switcher */
+  .theme-switcher {
+    @apply relative z-30;
+  }
+  .theme-switcher .buttons {
+    @apply absolute top-10 right-0 
+    border border-neutral-200 dark:border-neutral-700
+    bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-50
+    grid rounded-lg overflow-hidden;
+  }
+  .theme-switcher .buttons button {
+    @apply flex items-center gap-3 px-4 py-2 text-sm capitalize hover:bg-teal-700 hover:text-white;
+  }
+  .theme-switcher .selected {
+    @apply bg-teal-700 text-white;
+  }
+}
