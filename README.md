@@ -43,10 +43,11 @@ To run the React Notes App locally, follow these steps:
 
 ## Technologies Used
 
-- React
 - JavaScript
 - HTML
 - CSS
+- React
+- Tailwind CSS
 
 ## Live Preview
 
