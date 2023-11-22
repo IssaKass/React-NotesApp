@@ -45,6 +45,7 @@ function Toolbar({
       <button
         className="toolbar-button"
         title="Download note as text file"
+        disabled={notes.length === 0}
         onClick={() => downloadNote(`${currentNote.id}.txt`, currentNote.body)}
       >
         <FaDownload />
